@@ -1,0 +1,37 @@
+﻿@model Employee_Management_System.Models.Leave
+@{
+    ViewBag.Title = "LeaveForm";
+}
+
+<div class="container">
+    <div>
+        <h3 class="center">Leave Form</h3>
+    </div>
+    <div class="row form ">
+        @using (Html.BeginForm("AddEditLeave", "Leave", FormMethod.Post))
+        {
+            <div class="input-field col s12">
+                @Html.HiddenFor(x => x.leaveID)
+                @Html.DropDownListFor(x => x.employeeID,@ViewBag.EmployeeList as SelectList,"Select Employee", new { @id = "employeeName", @class = "form-control" })
+            </div>
+            <div class="input-field col s12">
+                @Html.DropDownListFor(x => x.departmentID, @ViewBag.departmentList as SelectList, "Select Department", new { @id = "departmentID", @class = "form-control" })
+            </div>
+            <div class="input-field col s12 m12">
+                @Html.TextBoxFor(x => x.subjectOfLeave, new { @id = "subjectOfLeave", @class = "" })
+                <label for="subjectOfLeave">Subject of Leave</label>
+            </div>
+            <div class="input-field col s12">
+                @Html.TextBoxFor(x => x.leaveOfDuration, new { @id = "leaveOfDuration", @class = "" })
+                <label for="leaveOfDuration">Leave of Duration</label>
+            </div>
+            <div class="input-field col s12">
+                @Html.TextBoxFor(x => x.remarks, new { @id = "remarks", @class = "" })
+                <label for="remarks">Remarks</label>
+            </div>
+            <div class="center" style="padding-right: 100px;">
+                <button class="btn">Submit</button>
+            </div>
+        }
+    </div>
+</div>

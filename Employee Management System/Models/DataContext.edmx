@@ -1,0 +1,489 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Employee_Management_SystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="_user">
+          <Key>
+            <PropertyRef Name="userID" />
+          </Key>
+          <Property Name="userID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userName" Type="varchar" MaxLength="100" />
+          <Property Name="email" Type="varchar" MaxLength="100" />
+          <Property Name="password" Type="int" />
+          <Property Name="remarks" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="departmentID" />
+          </Key>
+          <Property Name="departmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="departmentName" Type="varchar" MaxLength="100" />
+          <Property Name="departmentLocation" Type="varchar" MaxLength="60" />
+          <Property Name="headOfDepartment" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Designation">
+          <Key>
+            <PropertyRef Name="designationID" />
+          </Key>
+          <Property Name="designationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="designationName" Type="varchar" MaxLength="100" />
+          <Property Name="remarks" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="employeeID" />
+          </Key>
+          <Property Name="employeeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="employeeName" Type="varchar" MaxLength="100" />
+          <Property Name="departmentID" Type="int" />
+          <Property Name="designationID" Type="int" />
+          <Property Name="email" Type="varchar" MaxLength="200" />
+          <Property Name="phone" Type="bigint" />
+          <Property Name="remarks" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Leave">
+          <Key>
+            <PropertyRef Name="leaveID" />
+          </Key>
+          <Property Name="leaveID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="departmentID" Type="int" />
+          <Property Name="employeeID" Type="int" />
+          <Property Name="subjectOfLeave" Type="varchar" MaxLength="1000" />
+          <Property Name="leaveOfDuration" Type="int" />
+          <Property Name="remarks" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Salary">
+          <Key>
+            <PropertyRef Name="salaryID" />
+          </Key>
+          <Property Name="salaryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="departmentID" Type="int" />
+          <Property Name="employeeID" Type="int" />
+          <Property Name="salary" Type="int" />
+          <Property Name="tax" Type="int" />
+          <Property Name="penalty" Type="int" />
+          <Property Name="netSalary" Type="int" />
+          <Property Name="remarks" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Vacancy">
+          <Key>
+            <PropertyRef Name="vacancyID" />
+          </Key>
+          <Property Name="vacancyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="position" Type="varchar" MaxLength="100" />
+          <Property Name="qualification" Type="varchar" MaxLength="100" />
+          <Property Name="experience" Type="int" />
+          <Property Name="remarks" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <Association Name="FK__Employee__depart__3A81B327">
+          <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="departmentID" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="departmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Employee__design__3B75D760">
+          <End Role="Designation" Type="Self.Designation" Multiplicity="0..1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Designation">
+              <PropertyRef Name="designationID" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="designationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Leave__departmen__3E52440B">
+          <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+          <End Role="Leave" Type="Self.Leave" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="departmentID" />
+            </Principal>
+            <Dependent Role="Leave">
+              <PropertyRef Name="departmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Leave__employeeI__3F466844">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Leave" Type="Self.Leave" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="employeeID" />
+            </Principal>
+            <Dependent Role="Leave">
+              <PropertyRef Name="employeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__salary__departme__4222D4EF">
+          <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+          <End Role="Salary" Type="Self.Salary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="departmentID" />
+            </Principal>
+            <Dependent Role="Salary">
+              <PropertyRef Name="departmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__salary__employee__4316F928">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Salary" Type="Self.Salary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="employeeID" />
+            </Principal>
+            <Dependent Role="Salary">
+              <PropertyRef Name="employeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Employee_Management_SystemModelStoreContainer">
+          <EntitySet Name="_user" EntityType="Self._user" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Designation" EntityType="Self.Designation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Leave" EntityType="Self.Leave" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Salary" EntityType="Self.Salary" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vacancy" EntityType="Self.Vacancy" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Employee__depart__3A81B327" Association="Self.FK__Employee__depart__3A81B327">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Employee__design__3B75D760" Association="Self.FK__Employee__design__3B75D760">
+            <End Role="Designation" EntitySet="Designation" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Leave__departmen__3E52440B" Association="Self.FK__Leave__departmen__3E52440B">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="Leave" EntitySet="Leave" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Leave__employeeI__3F466844" Association="Self.FK__Leave__employeeI__3F466844">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Leave" EntitySet="Leave" />
+          </AssociationSet>
+          <AssociationSet Name="FK__salary__departme__4222D4EF" Association="Self.FK__salary__departme__4222D4EF">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="Salary" EntitySet="Salary" />
+          </AssociationSet>
+          <AssociationSet Name="FK__salary__employee__4316F928" Association="Self.FK__salary__employee__4316F928">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Salary" EntitySet="Salary" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Employee_Management_SystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C_user">
+          <Key>
+            <PropertyRef Name="userID" />
+          </Key>
+          <Property Name="userID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="Int32" />
+          <Property Name="remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="departmentID" />
+          </Key>
+          <Property Name="departmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="departmentName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="departmentLocation" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="headOfDepartment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK__Employee__depart__3A81B327" FromRole="Department" ToRole="Employee" />
+          <NavigationProperty Name="Leave" Relationship="Self.FK__Leave__departmen__3E52440B" FromRole="Department" ToRole="Leave" />
+          <NavigationProperty Name="Salary" Relationship="Self.FK__salary__departme__4222D4EF" FromRole="Department" ToRole="Salary" />
+        </EntityType>
+        <EntityType Name="Designation">
+          <Key>
+            <PropertyRef Name="designationID" />
+          </Key>
+          <Property Name="designationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="designationName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK__Employee__design__3B75D760" FromRole="Designation" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="employeeID" />
+          </Key>
+          <Property Name="employeeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="employeeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="departmentID" Type="Int32" />
+          <Property Name="designationID" Type="Int32" />
+          <Property Name="email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="phone" Type="Int64" />
+          <Property Name="remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Department" Relationship="Self.FK__Employee__depart__3A81B327" FromRole="Employee" ToRole="Department" />
+          <NavigationProperty Name="Designation" Relationship="Self.FK__Employee__design__3B75D760" FromRole="Employee" ToRole="Designation" />
+          <NavigationProperty Name="Leave" Relationship="Self.FK__Leave__employeeI__3F466844" FromRole="Employee" ToRole="Leave" />
+          <NavigationProperty Name="Salary" Relationship="Self.FK__salary__employee__4316F928" FromRole="Employee" ToRole="Salary" />
+        </EntityType>
+        <EntityType Name="Leave">
+          <Key>
+            <PropertyRef Name="leaveID" />
+          </Key>
+          <Property Name="leaveID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="departmentID" Type="Int32" />
+          <Property Name="employeeID" Type="Int32" />
+          <Property Name="subjectOfLeave" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="leaveOfDuration" Type="Int32" />
+          <Property Name="remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Department" Relationship="Self.FK__Leave__departmen__3E52440B" FromRole="Leave" ToRole="Department" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK__Leave__employeeI__3F466844" FromRole="Leave" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="Salary">
+          <Key>
+            <PropertyRef Name="salaryID" />
+          </Key>
+          <Property Name="salaryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="departmentID" Type="Int32" />
+          <Property Name="employeeID" Type="Int32" />
+          <Property Name="salary1" Type="Int32" />
+          <Property Name="tax" Type="Int32" />
+          <Property Name="penalty" Type="Int32" />
+          <Property Name="netSalary" Type="Int32" />
+          <Property Name="remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Department" Relationship="Self.FK__salary__departme__4222D4EF" FromRole="Salary" ToRole="Department" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK__salary__employee__4316F928" FromRole="Salary" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="Vacancy">
+          <Key>
+            <PropertyRef Name="vacancyID" />
+          </Key>
+          <Property Name="vacancyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="position" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="qualification" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="experience" Type="Int32" />
+          <Property Name="remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK__Employee__depart__3A81B327">
+          <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="departmentID" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="departmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Leave__departmen__3E52440B">
+          <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+          <End Role="Leave" Type="Self.Leave" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="departmentID" />
+            </Principal>
+            <Dependent Role="Leave">
+              <PropertyRef Name="departmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__salary__departme__4222D4EF">
+          <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+          <End Role="Salary" Type="Self.Salary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="departmentID" />
+            </Principal>
+            <Dependent Role="Salary">
+              <PropertyRef Name="departmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Employee__design__3B75D760">
+          <End Role="Designation" Type="Self.Designation" Multiplicity="0..1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Designation">
+              <PropertyRef Name="designationID" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="designationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Leave__employeeI__3F466844">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Leave" Type="Self.Leave" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="employeeID" />
+            </Principal>
+            <Dependent Role="Leave">
+              <PropertyRef Name="employeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__salary__employee__4316F928">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Salary" Type="Self.Salary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="employeeID" />
+            </Principal>
+            <Dependent Role="Salary">
+              <PropertyRef Name="employeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DataContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C_user" EntityType="Self.C_user" />
+          <EntitySet Name="Department" EntityType="Self.Department" />
+          <EntitySet Name="Designation" EntityType="Self.Designation" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" />
+          <EntitySet Name="Leave" EntityType="Self.Leave" />
+          <EntitySet Name="Salary" EntityType="Self.Salary" />
+          <EntitySet Name="Vacancy" EntityType="Self.Vacancy" />
+          <AssociationSet Name="FK__Employee__depart__3A81B327" Association="Self.FK__Employee__depart__3A81B327">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Leave__departmen__3E52440B" Association="Self.FK__Leave__departmen__3E52440B">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="Leave" EntitySet="Leave" />
+          </AssociationSet>
+          <AssociationSet Name="FK__salary__departme__4222D4EF" Association="Self.FK__salary__departme__4222D4EF">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="Salary" EntitySet="Salary" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Employee__design__3B75D760" Association="Self.FK__Employee__design__3B75D760">
+            <End Role="Designation" EntitySet="Designation" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Leave__employeeI__3F466844" Association="Self.FK__Leave__employeeI__3F466844">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Leave" EntitySet="Leave" />
+          </AssociationSet>
+          <AssociationSet Name="FK__salary__employee__4316F928" Association="Self.FK__salary__employee__4316F928">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Salary" EntitySet="Salary" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Employee_Management_SystemModelStoreContainer" CdmEntityContainer="DataContext">
+          <EntitySetMapping Name="C_user">
+            <EntityTypeMapping TypeName="Employee_Management_SystemModel.C_user">
+              <MappingFragment StoreEntitySet="_user">
+                <ScalarProperty Name="userID" ColumnName="userID" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="remarks" ColumnName="remarks" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Department">
+            <EntityTypeMapping TypeName="Employee_Management_SystemModel.Department">
+              <MappingFragment StoreEntitySet="Department">
+                <ScalarProperty Name="departmentID" ColumnName="departmentID" />
+                <ScalarProperty Name="departmentName" ColumnName="departmentName" />
+                <ScalarProperty Name="departmentLocation" ColumnName="departmentLocation" />
+                <ScalarProperty Name="headOfDepartment" ColumnName="headOfDepartment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Designation">
+            <EntityTypeMapping TypeName="Employee_Management_SystemModel.Designation">
+              <MappingFragment StoreEntitySet="Designation">
+                <ScalarProperty Name="designationID" ColumnName="designationID" />
+                <ScalarProperty Name="designationName" ColumnName="designationName" />
+                <ScalarProperty Name="remarks" ColumnName="remarks" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employee">
+            <EntityTypeMapping TypeName="Employee_Management_SystemModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="employeeID" ColumnName="employeeID" />
+                <ScalarProperty Name="employeeName" ColumnName="employeeName" />
+                <ScalarProperty Name="departmentID" ColumnName="departmentID" />
+                <ScalarProperty Name="designationID" ColumnName="designationID" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="remarks" ColumnName="remarks" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Leave">
+            <EntityTypeMapping TypeName="Employee_Management_SystemModel.Leave">
+              <MappingFragment StoreEntitySet="Leave">
+                <ScalarProperty Name="leaveID" ColumnName="leaveID" />
+                <ScalarProperty Name="departmentID" ColumnName="departmentID" />
+                <ScalarProperty Name="employeeID" ColumnName="employeeID" />
+                <ScalarProperty Name="subjectOfLeave" ColumnName="subjectOfLeave" />
+                <ScalarProperty Name="leaveOfDuration" ColumnName="leaveOfDuration" />
+                <ScalarProperty Name="remarks" ColumnName="remarks" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Salary">
+            <EntityTypeMapping TypeName="Employee_Management_SystemModel.Salary">
+              <MappingFragment StoreEntitySet="Salary">
+                <ScalarProperty Name="salaryID" ColumnName="salaryID" />
+                <ScalarProperty Name="departmentID" ColumnName="departmentID" />
+                <ScalarProperty Name="employeeID" ColumnName="employeeID" />
+                <ScalarProperty Name="salary1" ColumnName="salary" />
+                <ScalarProperty Name="tax" ColumnName="tax" />
+                <ScalarProperty Name="penalty" ColumnName="penalty" />
+                <ScalarProperty Name="netSalary" ColumnName="netSalary" />
+                <ScalarProperty Name="remarks" ColumnName="remarks" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vacancy">
+            <EntityTypeMapping TypeName="Employee_Management_SystemModel.Vacancy">
+              <MappingFragment StoreEntitySet="Vacancy">
+                <ScalarProperty Name="vacancyID" ColumnName="vacancyID" />
+                <ScalarProperty Name="position" ColumnName="position" />
+                <ScalarProperty Name="qualification" ColumnName="qualification" />
+                <ScalarProperty Name="experience" ColumnName="experience" />
+                <ScalarProperty Name="remarks" ColumnName="remarks" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

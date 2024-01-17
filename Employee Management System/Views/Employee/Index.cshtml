@@ -1,0 +1,89 @@
+﻿@model List<Employee_Management_System.Models.Employee>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container">
+    <div class="">
+        <h3>Employee Section</h3>
+    </div>
+    <div class="block row">
+        <div>
+            <p class="header left">Employee List</p>
+        </div>
+        <div>
+            <a href="@Url.Action("EmployeeForm")" class="right btn">Add Employee</a>
+        </div>
+    </div>
+    <div class="block row">
+       <table class="highlight">
+           <tr>
+               <th>
+                   Employee ID
+               </th>
+               <th>
+                   Employee Name
+               </th>
+               <th>
+                   Department <br>ID
+               </th>
+               <th>
+                   Designation <br>ID
+               </th>
+               <th>
+                   Email
+               </th>
+               <th>
+                   Phone
+               </th>
+               <th>
+                   Remarks
+               </th>
+               <th>
+                   Actions
+               </th>
+           </tr>
+           @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.employeeID
+                    </td>
+                    <td>
+                        @item.employeeName
+                    </td>
+                    <td>
+                        @item.departmentID
+                    </td>
+                    <td>
+                        @item.designationID
+                    </td>
+                    <td>
+                        @item.email
+                    </td>
+                    <td>
+                        @item.phone
+                    </td>
+                    <td>
+                        @item.remarks
+                    </td>
+                    <td>
+                        <a href="@Url.Action("EmployeeForm", new { @item.employeeID,@item.employeeName,@item.departmentID,@item.designationID,@item.phone,@item.email,@item.remarks})" class="btn">Edit</a>
+                        <button class="btn HideonClick" data-HideID="@item.employeeID">Delete</button>
+                    </td>
+                </tr>    
+                <tr id="@item.employeeID" class="HideRow">
+                    <td colspan="6" class="center">
+                        <span>Do you wanna delete this Employee?</span>
+                    </td>
+                    <td colspan="2" class="center">
+                        <a href=" @Url.Action("DeleteEmployee",new { @item.employeeID})" class="btn">Yes</a>
+                        <button class=" btn HideonClick" data-HideID="@item.employeeID">No</button>
+                    </td>
+                </tr>
+            }
+           
+       </table>
+    </div>
+</div>
+

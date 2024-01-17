@@ -1,0 +1,22 @@
+﻿<div class="" style="box-shadow: 2px 4px 5px 0px black;height:100vh;">
+    <div>
+        <br>
+        <img src="~/Assets/babe.jpg" id="babeIMG"/>
+        <br>
+    </div>
+    <div class="">
+        <br>
+        <span style="font: 20px Arial;color:white">Employee Management System</span>
+        <br>
+        <br>
+    </div>
+    <div class="collection">
+
+        @Html.ActionLink("Employee", "Index", "Employee", null, new { @class = "collection-item" })
+        @Html.ActionLink("Department", "Index", "Department", null, new { @class = "collection-item" })
+        @Html.ActionLink("Designation", "Index", "Designation", null, new { @class = "collection-item" })
+        @Html.ActionLink("Salary", "Index", "Salary", null, new { @class = "collection-item" })
+        @Html.ActionLink("Leave", "Index", "Leave", null, new { @class = "collection-item" })
+        @Html.ActionLink("Vacancy", "Index", "Vacancy", null, new { @class = "collection-item" })
+    </div>
+</div>

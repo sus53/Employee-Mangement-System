@@ -1,0 +1,42 @@
+﻿@model Employee_Management_System.Models.Employee
+@{
+    ViewBag.Title = "EmployeeForm";
+}
+
+<div class="container">
+    <div>
+        <h3 class="center">Employee Form</h3>
+    </div>
+    <div class="row form ">
+        @using (Html.BeginForm("AddEditEmployee", "Employee", FormMethod.Post))
+        {
+            <div class="input-field col s12">
+                @Html.HiddenFor(x => x.employeeID)
+                @Html.TextBoxFor(x => x.employeeName, new { @id = "employeeName", @class = "" })
+                <label for="employeeName">Employee Name</label>
+            </div>
+            <div class="input-field col s12">
+                @Html.DropDownListFor(x => x.departmentID, @ViewBag.DepartmentList as SelectList, "Select Department", new { @id = "departmentID", @class = "form-control" })
+            </div>
+            <div class="input-field col s12">
+                @Html.DropDownListFor(x => x.designationID, @ViewBag.DesignationList as SelectList, "Select Designation", new { @class = "form-control" })
+            </div>
+            <div class="input-field col s12 m12">
+                @Html.TextBoxFor(x => x.email, new { @id = "email", @class = "" })
+                <label for="email">Email</label>
+            </div>
+            <div class="input-field col s12">
+                @Html.TextBoxFor(x => x.phone, new { @id = "phone", @class = "" })
+                <label for="phone">Phone</label>
+            </div>
+            <div class="input-field col s12">
+                @Html.TextBoxFor(x => x.remarks, new { @id = "remarks", @class = "" })
+                <label for="remarks">Remarks</label>
+            </div>
+            <div class="center" style="padding-right: 100px;">
+                <button class="btn">Submit</button>
+            </div>
+        }
+    </div>
+</div>
+

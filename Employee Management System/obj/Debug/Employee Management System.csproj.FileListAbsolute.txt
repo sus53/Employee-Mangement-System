@@ -1,0 +1,81 @@
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\Employee Management System.dll.config
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\Employee Management System.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\Employee Management System.pdb
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\csc.exe
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\csc.exe.config
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\csc.rsp
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\csi.exe
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\csi.exe.config
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\csi.rsp
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\Microsoft.Managed.Core.targets
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\Microsoft.Win32.Primitives.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\System.AppContext.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\System.Collections.Immutable.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\System.Console.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\System.Globalization.Calendars.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\System.IO.Compression.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\System.IO.Compression.ZipFile.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\System.IO.FileSystem.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\System.Net.Http.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\System.Net.Sockets.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\System.Reflection.Metadata.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\System.Threading.Tasks.Extensions.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\System.ValueTuple.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\System.Xml.XmlDocument.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\System.Xml.XPath.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\vbc.exe
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\vbc.exe.config
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\vbc.rsp
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\VBCSCompiler.exe
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\roslyn\VBCSCompiler.exe.config
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\Antlr3.Runtime.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\Microsoft.Web.Infrastructure.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\Newtonsoft.Json.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\System.Web.Helpers.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\System.Web.Mvc.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\System.Web.Optimization.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\System.Web.Razor.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\System.Web.WebPages.Deployment.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\System.Web.WebPages.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\System.Web.WebPages.Razor.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\WebGrease.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\System.Web.Helpers.xml
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\System.Web.Mvc.xml
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\System.Web.Optimization.xml
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\System.Web.Razor.xml
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\System.Web.WebPages.xml
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\System.Web.WebPages.Deployment.xml
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\System.Web.WebPages.Razor.xml
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\Newtonsoft.Json.xml
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\Antlr3.Runtime.pdb
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\obj\Debug\Employee Management System.csproj.AssemblyReference.cache
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\obj\Debug\Employee Management System.csproj.CoreCompileInputs.cache
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\obj\Debug\Employee Management System.csproj.CopyComplete
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\obj\Debug\Employee Management System.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\obj\Debug\Employee Management System.pdb
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\EntityFramework.dll
+E:\Clz\Advanced Programming\Employee Management System\Employee Management System\Employee Management System\bin\EntityFramework.xml

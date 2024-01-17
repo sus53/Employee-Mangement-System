@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d8fe33af9ef144558c0330b5d808b164" Name="Diagram1" ZoomLevel="64">
+        <EntityTypeShape EntityType="Employee_Management_SystemModel.C_user" Width="1.5" PointX="9.125" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Employee_Management_SystemModel.Department" Width="1.5" PointX="4.125" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Employee_Management_SystemModel.Designation" Width="1.5" PointX="4.125" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Employee_Management_SystemModel.Employee" Width="1.5" PointX="6.375" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="Employee_Management_SystemModel.Leave" Width="1.5" PointX="8.625" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Employee_Management_SystemModel.Salary" Width="1.5" PointX="11.625" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Employee_Management_SystemModel.Vacancy" Width="1.5" PointX="4.125" PointY="8.25" IsExpanded="true" />
+        <AssociationConnector Association="Employee_Management_SystemModel.FK__Employee__depart__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="Employee_Management_SystemModel.FK__Leave__departmen__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="Employee_Management_SystemModel.FK__salary__departme__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="Employee_Management_SystemModel.FK__Employee__design__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="Employee_Management_SystemModel.FK__Leave__employeeI__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="Employee_Management_SystemModel.FK__salary__employee__4316F928" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

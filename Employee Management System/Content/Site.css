@@ -1,0 +1,78 @@
+﻿body {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background: #e6ebf1;
+    overflow-x: hidden;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+/* Navbar */
+
+#babeIMG{
+    border-radius:50%;
+    width:14vw;
+    height:25vh;
+    justify-content:left;
+}
+
+/**/
+
+.left-col {
+    background: black;
+    height:100vh;
+}
+.right-col{
+    padding-right:0px;
+    padding-left:0px;
+    padding-top:10px;
+}
+
+.block {
+    background: white;
+    border: none;
+    padding: 8px;
+    padding-top:20px;
+    padding-bottom: 20px;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.19);
+}
+.flex{
+    display:flex;
+}
+
+.form {
+    height: auto;
+    width: 32vw;
+    background: white;
+    border: none;
+    border-radius:10px;
+    padding: 10px;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.19);
+    padding-left: 6vw;
+    padding-bottom: 25px;
+}
+
+.font{
+    font: normal arial;
+    text-decoration:inherit;
+}
+
+.header{
+    font:25px arial;
+}

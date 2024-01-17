@@ -1,0 +1,28 @@
+﻿@model Employee_Management_System.Models.Designation
+@{
+    ViewBag.Title = "DesignationForm";
+}
+
+<div class="container">
+    <div>
+        <h3 class="center">Designation Form</h3>
+    </div>
+    <div class="row form ">
+        @using (Html.BeginForm("AddEditDesignation", "Designation", FormMethod.Post))
+        {
+            <div class="input-field col s12">
+                @Html.HiddenFor(x => x.designationID)
+                @Html.TextBoxFor(x => x.designationName, new { @id = "designationName", @class = "form-control" })
+                <label for="designationName">Designation Name</label>
+            </div>
+            <div class="input-field col s12">
+                @Html.TextBoxFor(x => x.remarks, new { @id = "remarks", @class = "" })
+                <label for="remarks">Remarks</label>
+            </div>
+            <div class="center" style="padding-right: 100px;">
+                <button class="btn">Submit</button>
+            </div>
+        }
+    </div>
+</div>
+

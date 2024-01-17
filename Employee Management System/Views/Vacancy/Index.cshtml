@@ -1,0 +1,77 @@
+﻿@model List<Employee_Management_System.Models.Vacancy>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container">
+    <div class="">
+        <h3>Vacancy Section</h3>
+    </div>
+    <div class="block row">
+        <div>
+            <p class="header left">Vacancy List</p>
+        </div>
+        <div>
+            <a href="@Url.Action("VacancyForm")" class="right btn">Add Vacancy</a>
+        </div>
+    </div>
+    <div class="block row">
+        <table class="highlight">
+            <tr>
+                <th>
+                    vacancy ID
+                </th>
+                <th>
+                    Position
+                </th>
+                <th>
+                    Qualification
+                </th>
+                <th>
+                    Experience
+                </th>
+                <th>
+                    Remarks
+                </th>
+                <th>
+                    Actions
+                </th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.vacancyID
+                    </td>
+                    <td>
+                        @item.position
+                    </td>
+                    <td>
+                        @item.qualification
+                    </td>
+                    <td>
+                        @item.experience
+                    </td>
+                    <td>
+                        @item.remarks
+                    </td>
+                    <td>
+                        <a href="@Url.Action("VacancyForm", new { @item.vacancyID,@item.position,@item.qualification,@item.experience,@item.remarks})" class="btn">Edit</a>
+                        <button class="btn HideonClick" data-HideID="@item.vacancyID">Delete</button>
+                    </td>
+                </tr>
+                <tr id="@item.vacancyID" class="HideRow">
+                    <td colspan="5" class="center">
+                        Do you want to delete this Vacancy?
+                    </td>
+                    <td colspan="1">
+                        <a href="@Url.Action("DeleteVacancy",new { @item.vacancyID})" class="btn">Yes</a>
+                        <button class="btn HideonClick" data-HideID="@item.vacancyID">No</button>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+
+
